@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "Cem Bıçakcı",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "i": "^0.3.7",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "npm": "^10.9.0"
   }
 }
