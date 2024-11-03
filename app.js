@@ -4,10 +4,12 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
 
+require('dotenv').config();
+
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
-mongoose.connect(`mongodb+srv://cmbicakci:@node-basic.rzzmn.mongodb.net/?retryWrites=true&w=majority&appName=node-basic`)
+mongoose.connect(`mongodb+srv://cmbicakci:${process.env.MONGO_DB_PASSWORD}@node-basic.rzzmn.mongodb.net/?retryWrites=true&w=majority&appName=node-basic`)
 
 // Body Parser
 app.use(morgan('dev'));
@@ -27,6 +29,7 @@ app.use((req, res, next) => {
 
 	next();
 });
+
 
 // Routes
 app.use('/products', productRoutes);
