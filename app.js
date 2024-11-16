@@ -8,6 +8,7 @@ require('dotenv').config();
 
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
+const userRoutes = require("./api/routes/user");
 
 mongoose.connect(`mongodb+srv://cmbicakci:${process.env.MONGO_DB_PASSWORD}@node-basic.rzzmn.mongodb.net/?retryWrites=true&w=majority&appName=node-basic`)
 
@@ -30,10 +31,10 @@ app.use((req, res, next) => {
 	next();
 });
 
-
 // Routes
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/user', userRoutes);
 
 // Error Handling
 app.use((req, res, next) => {
