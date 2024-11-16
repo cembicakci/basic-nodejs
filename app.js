@@ -13,9 +13,9 @@ mongoose.connect(`mongodb+srv://cmbicakci:${process.env.MONGO_DB_PASSWORD}@node-
 
 // Body Parser
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
-
 
 // CORS
 app.use((req, res, next) => {
